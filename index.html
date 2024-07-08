@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Check Name</title>
+    <script type="text/javascript">
+        function checkName() {
+            var name = document.getElementById("nameInput").value;
+            if (name === "Hailey") {
+                // Display the options for "Forgive Steve" and "Not to Forgive Steve"
+                document.getElementById("options").style.display = "block";
+                document.getElementById("welcomeMessage").innerHTML = "Welcome, Hailey!";
+            } else {
+                alert("Who are you? Get Out!");
+            }
+        }
+
+        function forgiveSteve() {
+            window.location.href = "forgiveSteve.html";
+        }
+
+        function notForgiveSteve() {
+            window.location.href = "notForgiveSteve.html";
+        }
+    </script>
+</head>
+<body>
+    <h1>Enter Your Name</h1>
+    <form onsubmit="event.preventDefault(); checkName();">
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput" name="nameInput" required>
+        <input type="submit" value="Submit">
+    </form>
+    <p id="welcomeMessage"></p>
+    <div id="options" style="display: none;">
+        <button onclick="forgiveSteve()">Forgive Steve</button>
+        <button onclick="notForgiveSteve()">Not to Forgive Steve</button>
+    </div>
+</body>
+</html>
